@@ -36,7 +36,7 @@ func ToHex(num int64) []byte {
 func (pow *ProofOfWork) InitData(nonce int) []byte {
 	data := bytes.Join(
 		[][]byte{
-			pow.Block.PreHash,
+			pow.Block.PrevHash,
 			pow.Block.Data,
 			ToHex(int64(nonce)),
 			ToHex(Difficulty),
